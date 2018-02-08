@@ -3,7 +3,7 @@
 The goal of this project was to implement a fully convolutional neural network based on the VGG-16 image classifier architecture for performing semantic segmentation to identify drivable road area from an car dashcam image (trained and tested on the KITTI data set).
 
 ## Code description:
-The relevant code is inside [`main.py`](./main.py) [`run`] method. The code downloads a pre-trained VGG16 model and extracts the input, keep probability, layer 3, layer 4 and layer 7 from it in method [`load_vgg`](./main.py#L22). Those layers are used in the [`layers`](./main.py#L50) to create the rest of the network:
+The relevant code is inside [`main.py`](./main.py). The code downloads a pre-trained VGG16 model and extracts the input, keep probability, layer 3, layer 4 and layer 7 from it in method [`load_vgg`](./main.py#L22). Those layers are used in the [`layers`](./main.py#L50) to create the rest of the network:
 
 - One convolutional layer with kernel 1 from VGG's layer 7 ([line 61](./main.py#L61)).
 - One deconvolutional layer with kernel 4 and stride 2 from the first convolutional layer ([line 67](./main.py#L67)).
